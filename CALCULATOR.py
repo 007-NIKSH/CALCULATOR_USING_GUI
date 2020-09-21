@@ -1,21 +1,21 @@
 from tkinter import *
 root = Tk()
 
-root.title("CALCULATOR")
+root.title("CALCULATOR") # Title
 root.geometry("340x310")
 
 text = Entry(root, font = ("calibri", 16))
-text.pack(fill = X, padx = 5, pady = 5, ipadx = 5, ipady = 5)
+text.pack(fill = X, padx = 5, pady = 5, ipadx = 5, ipady = 5) # Text
 
-def Add_Text(n):
+def Add_Text(n): # Add Text
     text.insert(END, n)
 
-def calculate():
+def calculate(): # Calculations
     result = eval(text.get())
     text.delete(0, END)
     text.insert(0, result)
 
-def Del():
+def Del(): # Clear Text
     text.delete(0, END)
     text.insert(0, "")
 
@@ -86,8 +86,6 @@ button_dummy.pack(side = LEFT)
 
 button_delete = Button(frame5, text = "C", width = 9, height = 3, command = lambda:Del())
 button_delete.pack(side = LEFT)
-
-# OPERATORS
 
 button_division = Button(frame1, text = "/", width = 9, height = 3, command = lambda:Add_Text("/"))
 button_division.pack()
